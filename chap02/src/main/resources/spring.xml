@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sgtPeppers" class="com.chazdada.xml.soundsystem.SgtPeppers">
+    </bean>
+
+    <bean id="cdPlayer" class="com.chazdada.xml.soundsystem.CDPlayer">
+        <constructor-arg ref="sgtPeppers"></constructor-arg>
+    </bean>
+
+    <bean id="cdPlayer2" class="com.chazdada.xml.soundsystem.CDPlayer2">
+        <property name="cd" ref="sgtPeppers"></property>
+    </bean>
+</beans>
